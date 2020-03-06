@@ -13,6 +13,8 @@ RUN apk update && apk add --no-cache build-base git autoconf automake gettext pc
 ADD privoxy.config /etc/privoxy/config
 ADD ss_local.sh /ss_local.sh
 
+RUN chmod +x /ss_local.sh
+
 EXPOSE 1086/tcp
 EXPOSE 1087/tcp
 
