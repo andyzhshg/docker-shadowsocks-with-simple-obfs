@@ -8,7 +8,7 @@ then
     iptables -F
 
     # do not redirect proxy provider
-    iptables -t nat -A OUTPUT -d ${PROXY_IP} -j RETURN
+    #iptables -t nat -A OUTPUT -d ${PROXY_IP} -j RETURN
 
     # do not redirect local access
     # iptables -t nat -A OUTPUT -d 10.0.0.0/8 -j RETURN
