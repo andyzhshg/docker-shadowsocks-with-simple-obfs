@@ -8,12 +8,12 @@ then
     iptables -F
 
     # do not redirect proxy provider
-    #iptables -t nat -A OUTPUT -d ${PROXY_IP} -j RETURN
+    iptables -t nat -A OUTPUT -d ${PROXY_IP} -j RETURN
 
     # do not redirect local access
-    # iptables -t nat -A OUTPUT -d 10.0.0.0/8 -j RETURN
-    # iptables -t nat -A OUTPUT -d 172.16.0.0/16 -j RETURN
-    # iptables -t nat -A OUTPUT -d 192.168.0.0/16 -j RETURN
+    iptables -t nat -A OUTPUT -d 10.0.0.0/8 -j RETURN
+    iptables -t nat -A OUTPUT -d 172.16.0.0/16 -j RETURN
+    iptables -t nat -A OUTPUT -d 192.168.0.0/16 -j RETURN
     iptables -t nat -A OUTPUT -d 127.0.0.0/8 -j RETURN
 
     # redirect all other accesses to redsocks service
